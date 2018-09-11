@@ -114,7 +114,7 @@
                                 <rect key="frame" x="87" y="418" width="200" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Qg3-pc-rXH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Qg3-pc-rXH"/>
                                     <constraint firstAttribute="height" constant="30" id="TG2-Cp-zP5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GothamMedium" family="Gotham Medium" pointSize="10"/>
@@ -133,6 +133,9 @@
                                 <state key="normal" title="Sign In With Facebook">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="fbLoginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOH-e4-aNt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

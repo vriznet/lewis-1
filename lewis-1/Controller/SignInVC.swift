@@ -8,6 +8,11 @@
 
 import UIKit
 
+import Firebase
+
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 class SignInVC: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -34,6 +39,16 @@ class SignInVC: UIViewController {
         passwordTextField.inputAccessoryView = keyboardToolbar
     }
     
+    func firebaseAuth(_ credential: AuthCredential) {
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("Unable to authenticate with Firebase - \(error!)")
+            } else {
+                print("Successfully authenticated with Firebase")
+            }
+        })
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -52,6 +67,21 @@ class SignInVC: UIViewController {
     @IBAction func pwTextFieldEditingDidEnd(_ sender: Any) {
         if passwordTextField.text == "" {
             pwPlaceholderLbl.isHidden = false
+        }
+    }
+    @IBAction func fbLoginBtnPressed(_ sender: Any) {
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                print("Unable to authenticate with Facebook - \(error!)")
+            } else if result?.isCancelled == true {
+                print("User cancelled Facebook authentication")
+            } else {
+                print("Successfully authenticated with Facebook")
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAuth(credential)
+            }
         }
     }
 }
