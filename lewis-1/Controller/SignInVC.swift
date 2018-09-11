@@ -69,6 +69,23 @@ class SignInVC: UIViewController {
             pwPlaceholderLbl.isHidden = false
         }
     }
+    @IBAction func signInBtnPressed(_ sender: Any) {
+        if let id = idTextField.text, let pw = passwordTextField.text {
+            Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
+                if error == nil {
+                    print("Email user authenticated with Firebase")
+                } else {
+                    Auth.auth().createUser(withEmail: id, password: pw, completion: { (user, error) in
+                        if error != nil {
+                            print("Unable to authenticate with Firebase using Email - \(error!)")
+                        }else{
+                            print("Successfully authenticated with Firebase using email")
+                        }
+                    })
+                }
+            }
+        }
+    }
     @IBAction func fbLoginBtnPressed(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
         

@@ -70,7 +70,7 @@
                                     <constraint firstAttribute="height" constant="30" id="rvJ-NG-apF"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="10"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="lewisTextField" value="YES"/>
@@ -88,8 +88,8 @@
                                     <constraint firstAttribute="height" constant="30" id="l76-yF-M2I"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="lewisTextField" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -121,6 +121,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.4058055579662323" green="0.096430771052837372" blue="0.99670225381851196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dzY-85-nTx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRl-YK-VA2">
                                 <rect key="frame" x="87" y="458" width="200" height="30"/>
