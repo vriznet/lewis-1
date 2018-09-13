@@ -13,6 +13,8 @@ import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+import SwiftKeychainWrapper
+
 class SignInVC: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,10 +25,19 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         idTextFieldBGView.layer.cornerRadius = 5.0
         pwTextFieldBGView.layer.cornerRadius = 5.0
         
         addDoneButton()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
+            print("ID found in keychain")
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
     
     func addDoneButton(){
@@ -45,8 +56,17 @@ class SignInVC: UIViewController {
                 print("Unable to authenticate with Firebase - \(error!)")
             } else {
                 print("Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
+    }
+    
+    func completeSignIn(id: String) {
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("Data saved to Keychain \(keychainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,12 +94,18 @@ class SignInVC: UIViewController {
             Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
                 if error == nil {
                     print("Email user authenticated with Firebase")
+                    if let user = user{
+                        self.completeSignIn(id: user.user.uid)
+                    }
                 } else {
                     Auth.auth().createUser(withEmail: id, password: pw, completion: { (user, error) in
                         if error != nil {
                             print("Unable to authenticate with Firebase using Email - \(error!)")
                         }else{
                             print("Successfully authenticated with Firebase using email")
+                            if let user = user {
+                                self.completeSignIn(id: user.user.uid)
+                            }
                         }
                     })
                 }

@@ -177,11 +177,47 @@
                         <outlet property="passwordTextField" destination="Gx3-35-rVI" id="gGA-O4-jns"/>
                         <outlet property="pwPlaceholderLbl" destination="Lsy-EQ-6EY" id="JPM-4x-ivH"/>
                         <outlet property="pwTextFieldBGView" destination="FcO-Wc-XhC" id="i7X-bS-iTn"/>
+                        <segue destination="dvi-H5-baW" kind="show" identifier="goToFeed" id="oKx-0J-thW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="29.55665024630542"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="rfG-8V-Qrh">
+            <objects>
+                <viewController id="dvi-H5-baW" customClass="FeedVC" customModule="lewis_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qJh-S2-E0F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxS-4d-2AH">
+                                <rect key="frame" x="164" y="391" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="3Zt-i5-Oqe"/>
+                                    <constraint firstAttribute="height" constant="30" id="mRX-6Z-Jkn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnPressed:" destination="dvi-H5-baW" eventType="touchUpInside" id="8KY-n6-G5b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sxS-4d-2AH" firstAttribute="centerY" secondItem="qJh-S2-E0F" secondAttribute="centerY" id="8Bp-7X-FqH"/>
+                            <constraint firstItem="sxS-4d-2AH" firstAttribute="centerX" secondItem="qJh-S2-E0F" secondAttribute="centerX" id="nDn-RL-ZuQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="05X-HU-9Md"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="vUI-KU-eHm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owm-um-4PV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="30"/>
         </scene>
     </scenes>
     <resources>
