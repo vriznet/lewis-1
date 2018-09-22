@@ -324,14 +324,14 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="heart_empty" translatesAutoresizingMaskIntoConstraints="NO" id="cel-nM-rae">
-                                                            <rect key="frame" x="273.66666666666669" y="399" width="15" height="15"/>
+                                                            <rect key="frame" x="297" y="399" width="15" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="dXL-3X-kh7"/>
                                                                 <constraint firstAttribute="height" constant="15" id="qc6-F8-jJf"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23434" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qua-ck-9D7">
-                                                            <rect key="frame" x="296.66666666666669" y="402.33333333333331" width="38.333333333333314" height="11"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qua-ck-9D7">
+                                                            <rect key="frame" x="320" y="402.33333333333331" width="15" height="11"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="11" id="ObH-wn-ch1"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="mpY-P7-IHm"/>

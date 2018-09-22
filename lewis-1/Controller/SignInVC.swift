@@ -115,7 +115,7 @@ class SignInVC: UIViewController {
                 }
             }
         }
-    }   
+    }
     @IBAction func fbLoginBtnPressed(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
         
