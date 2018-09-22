@@ -57,13 +57,15 @@ class SignInVC: UIViewController {
             } else {
                 print("Successfully authenticated with Firebase")
                 if let user = user {
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
         })
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Data saved to Keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)
@@ -95,7 +97,8 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("Email user authenticated with Firebase")
                     if let user = user{
-                        self.completeSignIn(id: user.user.uid)
+                        let userData = ["provider": user.user.providerID]
+                        self.completeSignIn(id: user.user.uid, userData: userData)
                     }
                 } else {
                     Auth.auth().createUser(withEmail: id, password: pw, completion: { (user, error) in
@@ -104,14 +107,15 @@ class SignInVC: UIViewController {
                         }else{
                             print("Successfully authenticated with Firebase using email")
                             if let user = user {
-                                self.completeSignIn(id: user.user.uid)
+                                let userData = ["provider": user.user.providerID]
+                                self.completeSignIn(id: user.user.uid, userData: userData)
                             }
                         }
                     })
                 }
             }
         }
-    }
+    }   
     @IBAction func fbLoginBtnPressed(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
         

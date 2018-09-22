@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B5D8B1D215356C300EC5F99 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8B1C215356C300EC5F99 /* DataService.swift */; };
 		9B7784F821351A99001F838B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7784F721351A99001F838B /* AppDelegate.swift */; };
 		9B7784FA21351A99001F838B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7784F921351A99001F838B /* SignInVC.swift */; };
 		9B7784FD21351A99001F838B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7784FB21351A99001F838B /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 		9B77851021351D4E001F838B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B77850D21351D4E001F838B /* FBSDKLoginKit.framework */; };
 		9B79BEFA2147752A0070FDEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B79BEF92147752A0070FDEC /* Constants.swift */; };
 		9B79BEFC214777C40070FDEC /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B79BEFB214777C40070FDEC /* FeedVC.swift */; };
+		9B9E340A214B6E95009DEC0A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9E3409214B6E95009DEC0A /* FeedCell.swift */; };
 		9BB5665D213E22B900DB807D /* Gotham-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5664D213E22B200DB807D /* Gotham-Thin.ttf */; };
 		9BB5665E213E22B900DB807D /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5664E213E22B300DB807D /* Gotham-BookItalic.ttf */; };
 		9BB5665F213E22B900DB807D /* Gotham-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BB5664F213E22B300DB807D /* Gotham-Black.ttf */; };
@@ -42,6 +44,7 @@
 		0E0257849B452D38D279CD8B /* Pods-lewis-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lewis-1.release.xcconfig"; path = "Pods/Target Support Files/Pods-lewis-1/Pods-lewis-1.release.xcconfig"; sourceTree = "<group>"; };
 		167DEED8686C3F756D87DF22 /* Pods-lewis-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lewis-1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lewis-1/Pods-lewis-1.debug.xcconfig"; sourceTree = "<group>"; };
 		9B58830C2140EA6200EF7720 /* lewis-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "lewis-1.entitlements"; sourceTree = "<group>"; };
+		9B5D8B1C215356C300EC5F99 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9B7784F421351A99001F838B /* lewis-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lewis-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7784F721351A99001F838B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7784F921351A99001F838B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		9B77850D21351D4E001F838B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B79BEF92147752A0070FDEC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B79BEFB214777C40070FDEC /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		9B9E3409214B6E95009DEC0A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		9BB5664D213E22B200DB807D /* Gotham-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Thin.ttf"; sourceTree = "<group>"; };
 		9BB5664E213E22B300DB807D /* Gotham-BookItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.ttf"; sourceTree = "<group>"; };
 		9BB5664F213E22B300DB807D /* Gotham-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Black.ttf"; sourceTree = "<group>"; };
@@ -110,6 +114,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B5D8B1B215356A200EC5F99 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B5D8B1C215356C300EC5F99 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9B7784EB21351A99001F838B = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 		9B7784F621351A99001F838B /* lewis-1 */ = {
 			isa = PBXGroup;
 			children = (
+				9B5D8B1B215356A200EC5F99 /* Services */,
 				9B79BEF8214775140070FDEC /* Util */,
 				9B58830C2140EA6200EF7720 /* lewis-1.entitlements */,
 				9B77851D213658A8001F838B /* Model */,
@@ -168,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				9BB5666D213E24AC00DB807D /* LewisTextField.swift */,
+				9B9E3409214B6E95009DEC0A /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,10 +367,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7784FA21351A99001F838B /* SignInVC.swift in Sources */,
+				9B5D8B1D215356C300EC5F99 /* DataService.swift in Sources */,
 				9B7784F821351A99001F838B /* AppDelegate.swift in Sources */,
 				9B79BEFC214777C40070FDEC /* FeedVC.swift in Sources */,
 				9BB5666E213E24AC00DB807D /* LewisTextField.swift in Sources */,
 				9B79BEFA2147752A0070FDEC /* Constants.swift in Sources */,
+				9B9E340A214B6E95009DEC0A /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

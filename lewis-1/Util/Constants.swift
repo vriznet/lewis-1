@@ -6,6 +6,6 @@
 //  Copyright © 2018년 vriz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let KEY_UID = "uid"
