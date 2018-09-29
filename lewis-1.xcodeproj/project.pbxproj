@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B5D8B1D215356C300EC5F99 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8B1C215356C300EC5F99 /* DataService.swift */; };
+		9B5D8B1F215F337D00EC5F99 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D8B1E215F337D00EC5F99 /* Post.swift */; };
 		9B7784F821351A99001F838B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7784F721351A99001F838B /* AppDelegate.swift */; };
 		9B7784FA21351A99001F838B /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7784F921351A99001F838B /* SignInVC.swift */; };
 		9B7784FD21351A99001F838B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7784FB21351A99001F838B /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		167DEED8686C3F756D87DF22 /* Pods-lewis-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lewis-1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lewis-1/Pods-lewis-1.debug.xcconfig"; sourceTree = "<group>"; };
 		9B58830C2140EA6200EF7720 /* lewis-1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "lewis-1.entitlements"; sourceTree = "<group>"; };
 		9B5D8B1C215356C300EC5F99 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		9B5D8B1E215F337D00EC5F99 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9B7784F421351A99001F838B /* lewis-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lewis-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7784F721351A99001F838B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B7784F921351A99001F838B /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		9B77851D213658A8001F838B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B5D8B1E215F337D00EC5F99 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				9B7784FA21351A99001F838B /* SignInVC.swift in Sources */,
 				9B5D8B1D215356C300EC5F99 /* DataService.swift in Sources */,
 				9B7784F821351A99001F838B /* AppDelegate.swift in Sources */,
+				9B5D8B1F215F337D00EC5F99 /* Post.swift in Sources */,
 				9B79BEFC214777C40070FDEC /* FeedVC.swift in Sources */,
 				9BB5666E213E24AC00DB807D /* LewisTextField.swift in Sources */,
 				9B79BEFA2147752A0070FDEC /* Constants.swift in Sources */,
