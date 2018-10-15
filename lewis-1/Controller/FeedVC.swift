@@ -53,8 +53,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as? FeedCell {
             let post = posts[indexPath.row]
-            print("POST: \(post.caption)")
-            cell.configureCell(text: "test")
+            cell.configureCell(post: post)
             return cell
         }
         return FeedCell()
