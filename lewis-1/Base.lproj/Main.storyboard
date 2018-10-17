@@ -209,7 +209,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-GX-mEb">
-                                <rect key="frame" x="151" y="54" width="72" height="15"/>
+                                <rect key="frame" x="151.66666666666666" y="54" width="72" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Oh5-39-9Bt"/>
                                     <constraint firstAttribute="width" constant="72" id="gt2-nh-C5N"/>
@@ -231,7 +231,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8dO-Ns-xkr">
                                 <rect key="frame" x="18.666666666666657" y="84" width="338" height="30"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_photo" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-gb-bej">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_photo" translatesAutoresizingMaskIntoConstraints="NO" id="ASl-gb-bej" customClass="CircleView" customModule="lewis_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Hql-vR-X5X"/>
@@ -394,8 +394,10 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8dO-Ns-xkr" firstAttribute="centerX" secondItem="05X-HU-9Md" secondAttribute="centerX" id="Dj0-DQ-iu2"/>
+                            <constraint firstItem="05X-HU-9Md" firstAttribute="trailing" secondItem="cbP-rv-3WY" secondAttribute="trailing" constant="20" id="H4c-KA-iea"/>
                             <constraint firstItem="ieq-i7-KPU" firstAttribute="leading" secondItem="8dO-Ns-xkr" secondAttribute="leading" constant="40" id="IoT-1Y-gRg"/>
                             <constraint firstItem="ieq-i7-KPU" firstAttribute="centerY" secondItem="8dO-Ns-xkr" secondAttribute="centerY" id="NLz-Ot-Ehb"/>
                             <constraint firstAttribute="bottom" secondItem="pBB-m3-uaI" secondAttribute="bottom" id="Pm6-Lo-06e"/>
@@ -404,8 +406,6 @@
                             <constraint firstItem="pBB-m3-uaI" firstAttribute="leading" secondItem="05X-HU-9Md" secondAttribute="leading" constant="16" id="VYo-Qh-7cq"/>
                             <constraint firstItem="NJT-GX-mEb" firstAttribute="centerX" secondItem="qJh-S2-E0F" secondAttribute="centerX" id="c8i-ak-nBn"/>
                             <constraint firstItem="pBB-m3-uaI" firstAttribute="top" secondItem="hz8-jC-VIn" secondAttribute="bottom" constant="10" id="rfU-K9-sIw"/>
-                            <constraint firstItem="cbP-rv-3WY" firstAttribute="leading" secondItem="NJT-GX-mEb" secondAttribute="trailing" constant="82" id="sdU-tt-PtZ"/>
-                            <constraint firstItem="05X-HU-9Md" firstAttribute="trailing" secondItem="cbP-rv-3WY" secondAttribute="trailing" constant="20" id="uGv-Mp-v3H"/>
                             <constraint firstItem="05X-HU-9Md" firstAttribute="trailing" secondItem="pBB-m3-uaI" secondAttribute="trailing" constant="16" id="vYi-ed-KDf"/>
                             <constraint firstItem="hz8-jC-VIn" firstAttribute="top" secondItem="qJh-S2-E0F" secondAttribute="top" id="vsT-iW-bfJ"/>
                             <constraint firstItem="8dO-Ns-xkr" firstAttribute="top" secondItem="cbP-rv-3WY" secondAttribute="bottom" constant="10" id="wxv-Js-OyW"/>
@@ -414,13 +414,22 @@
                             <constraint firstItem="cbP-rv-3WY" firstAttribute="top" secondItem="05X-HU-9Md" secondAttribute="top" constant="10" id="zZS-LL-qY9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="05X-HU-9Md"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yvH-eU-8Xd" appends="YES" id="7cr-hK-2IQ"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="ASl-gb-bej" id="IK4-KM-15e"/>
                         <outlet property="tableView" destination="pBB-m3-uaI" id="nEG-Gb-rR9"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="vUI-KU-eHm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owm-um-4PV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yvH-eU-8Xd">
+                    <connections>
+                        <action selector="addImage:" destination="dvi-H5-baW" id="iir-4H-sZj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1223.2" y="28.817733990147783"/>
         </scene>
