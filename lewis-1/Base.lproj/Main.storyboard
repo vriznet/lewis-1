@@ -268,6 +268,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="postBtnPressed:" destination="dvi-H5-baW" eventType="touchUpInside" id="etR-fR-YCS"/>
                                             <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pjt-Fq-mke"/>
                                         </connections>
                                     </button>
@@ -419,6 +420,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="captionField" destination="ieq-i7-KPU" id="d7i-YG-Udf"/>
                         <outlet property="imageAdd" destination="ASl-gb-bej" id="IK4-KM-15e"/>
                         <outlet property="tableView" destination="pBB-m3-uaI" id="nEG-Gb-rR9"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="vUI-KU-eHm"/>
@@ -431,7 +433,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1223.2" y="28.817733990147783"/>
+            <point key="canvasLocation" x="919" y="30"/>
         </scene>
     </scenes>
     <resources>
