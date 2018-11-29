@@ -69,14 +69,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             let imgUid = NSUUID().uuidString
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
-            
+            self.posts = []
             DataService.ds.REF_POST_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
                     print("Unable to upload image to Firebase storage")
                 } else {
                     print("Successfully uploaded image to Firebase Storage")
                     DataService.ds.REF_POST_IMAGES.child(imgUid).downloadURL(completion: { (url, error) in
-                        print(url!)
+                        let downloadURL = url?.absoluteString
+                        self.postToFirebase(imgUrl: downloadURL!)
+                        
                     })
                 }
             }
@@ -113,5 +115,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             
         }
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, Any> = [
+            "caption": captionField.text!,
+            "imageUrl": imgUrl,
+            "likes": 0
+        ]
+        
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+        
+        captionField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "btn_photo")
+        
+        tableView.reloadData()
     }
 }
